@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const { initDB } = require('./models/db');
-const taskRoutes = require('./routes/tasks');
+const taskRoutes = require('./models/db');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -25,7 +25,7 @@ app.use('/api/tasks', taskRoutes);
 // Error handling
 app.use(errorHandler);
 
-// Séparé pour pouvoir importer app dans les tests sans démarrer le serveur
+// Séparé pour pouvoir importer app dans les tests sans démarrer le serveurr
 const start = async () => {
   await initDB();
   app.listen(PORT, () => console.log(`API sur http://localhost:${PORT}`));
