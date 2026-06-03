@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const { initDB } = require('./models/db');
-const taskRoutes = require('./models/db');
+const taskRoutes = require('./routes/tasks'); // était ./models/db
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
