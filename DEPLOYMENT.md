@@ -48,6 +48,6 @@ curl http://<adresse>/health
 # 5. Vérifier Grafana : le taux d'erreurs 5xx redescend
 ```
 
-Seulement après ces 5 étapes, prévenir l'équipe : _"prod remontée sur la version N-1, rollback fait à [heure], on regarde la cause demain."_
+
 
 
