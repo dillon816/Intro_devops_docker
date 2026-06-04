@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-api-service
+spec:
+  selector:
+    app: todo-api              # cible les pods étiquetés app=todo-api
+  ports:
+    - protocol: TCP
+      port: 80                 # port exposé par le Service
+      targetPort: 3000         # port de l'app dans le pod
+  type: NodePort               # accessible depuis l'extérieur du cluster
