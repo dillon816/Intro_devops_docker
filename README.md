@@ -17,7 +17,7 @@ Voir [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ## Dashboard Grafana
 
-![Dashboard Grafana](screenshot/Screenshot.png)
+ [Le screenshoot](screenshot/Screenshot.png)
 
 ## Stack technique
 
