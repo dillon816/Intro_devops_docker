@@ -50,8 +50,4 @@ curl http://<adresse>/health
 
 Seulement après ces 5 étapes, prévenir l'équipe : _"prod remontée sur la version N-1, rollback fait à [heure], on regarde la cause demain."_
 
-## 5. Contacts
 
-- Responsable déploiement : [Prénom Nom] — [contact]
-- Astreinte : [Prénom Nom] — [contact]
-- Accès cluster : [qui peut donner les droits]
