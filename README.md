@@ -101,7 +101,3 @@ curl -X DELETE http://localhost:3000/api/tasks/<id>
 npm run test:unit         # Tests unitaires (sans DB)
 npm run test:integration  # Tests d'intégration (DB requise)
 ```
-
-## Gestion Agile
-
-Tâches suivies via GitHub Issues / Projects (Kanban).
