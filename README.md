@@ -2,6 +2,23 @@
 
 API REST de gestion de tâches dockerisée avec Node.js et PostgreSQL.
 
+## Membres
+
+- Dilon AZAG (@dillon816)
+- Tristan DZIOCH (@nastry69)
+
+## Image DockerHub
+
+`<pseudo-dockerhub>/todo-api`
+
+## Déploiement
+
+Voir [DEPLOYMENT.md](DEPLOYMENT.md)
+
+## Dashboard Grafana
+
+<!-- coller le screenshot ici en phase 5 -->
+
 ## Stack technique
 
 - **Runtime** : Node.js 18 (Alpine)
