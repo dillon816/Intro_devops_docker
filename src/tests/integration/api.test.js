@@ -1,5 +1,14 @@
 const request = require('supertest');
 const app = require('../../app');
+const { initDB, pool } = require('../../models/db');
+
+beforeAll(async () => {
+  await initDB();
+});
+
+afterAll(async () => {
+  await pool.end();
+});
 
 describe('Health check', () => {
   test('GET /health retourne 200', async () => {
