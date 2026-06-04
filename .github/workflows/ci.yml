@@ -8,7 +8,28 @@ on:
 
 jobs:
 
-  # PHASE 1 : Tests unitaires 
+  # PHASE 6 : Audit de sécurité — tourne en parallèle, sans bloquer les tests
+  security-audit:
+    name: Audit de sécurité (npm audit)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Audit des dépendances (échec sur faille critique)
+        run: npm audit --audit-level=critical
+
+  # PHASE 1 : Tests unitaires
   test-unit:
     name: Tests unitaires
     runs-on: ubuntu-latest

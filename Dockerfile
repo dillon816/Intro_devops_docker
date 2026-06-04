@@ -1,20 +1,18 @@
-# Utilisation d'une image de base Node.js
-FROM node:18-alpine
+# ─── Stage 1 : installation des dépendances de production ─────────────────
+FROM node:18-alpine AS deps
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --omit=dev && npm cache clean --force
 
-# Création du répertoire de travail dans le conteneur
+# ─── Stage 2 : image de production finale ─────────────────────────────────
+FROM node:18-alpine AS runner
 WORKDIR /app
 
-# Copie des fichiers du projet dans le conteneur
-COPY package*.json ./
+ENV NODE_ENV=production
 
-# Installation des dépendances
-RUN npm ci --only=production
+# Uniquement node_modules propre + code source (sans tests, monitoring, k8s…)
+COPY --from=deps /app/node_modules ./node_modules
+COPY src ./src
 
-# Copie du reste des fichiers dans le conteneur
-COPY . .
-
-# Exposition du port utilisé par l'application
 EXPOSE 3000
-
-# Commande pour démarrer l'application
 CMD ["node", "src/app.js"]
