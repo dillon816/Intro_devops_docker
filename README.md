@@ -9,7 +9,7 @@ API REST de gestion de tâches dockerisée avec Node.js et PostgreSQL.
 
 ## Image DockerHub
 
-`<pseudo-dockerhub>/todo-api`
+`nastry69/todo-api`
 
 ## Déploiement
 
@@ -17,7 +17,7 @@ Voir [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ## Dashboard Grafana
 
-<!-- coller le screenshot ici en phase 5 -->
+![Dashboard Grafana](screenshot/Screenshot.png)
 
 ## Stack technique
 
